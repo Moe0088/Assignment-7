@@ -26,7 +26,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		}
 
 		// needs to loop to shift elements
-		for (int i = size - 1; i > index; i--) {
+		for (int i = size ; i > index; i--) {
 			items[i] = items[i - 1];
 		}
 		items[index] = item;

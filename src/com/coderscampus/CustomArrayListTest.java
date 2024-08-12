@@ -22,7 +22,27 @@ class CustomArrayListTest {
 		assertEquals(15, sut.get(0));
 		assertEquals(51, sut.getSize());
 	}
-
+@Test
+void testAdd_AddItemInTheMiddle() {
+	CustomArrayList<Integer> sut = new CustomArrayList<>();
+	generate50Numbers(sut);
+	sut.add(7,1000);
+	sut.add(7, 1001);
+	sut.add(7, 1002);
+	sut.add(7, 89);
+	
+	assertEquals(89,sut.get(7));
+	assertEquals(1002,sut.get(8));
+	assertEquals(1001,sut.get(9));
+	assertEquals(1000,sut.get(10));
+	assertEquals(54, sut.getSize());
+	for (int i = 0; i < sut.getSize(); i++) {
+		System.out.println("Index " + i + ": " + sut.get(i));
+	}
+	System.out.println("List size: " + sut.getSize());
+	
+	
+}
 	@Test
 	void testAdd_AddItemInTheEnd() {
 		CustomArrayList<Integer> sut = new CustomArrayList<>();
@@ -31,7 +51,7 @@ class CustomArrayListTest {
 		// (expected results, actual results)
 		assertEquals(60, sut.get(49));
 		assertEquals(51, sut.getSize());
-		System.out.println("List contents:");
+//		System.out.println("List contents:");
 //		for (int i = 0; i < sut.getSize(); i++) {
 //			System.out.println("Index " + i + ": " + sut.get(i));
 //		}
